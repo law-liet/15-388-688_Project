@@ -8,7 +8,7 @@ def receiveBuffer(tweets, outputFile):
     print 'More %d saved on file...\n' % len(tweets)
     
 
-def get_tweets(maxtweets, query, username='', since='', until='', top=False):
+def get_tweets(filename, maxtweets, query, username='', since='', until='', top=False):
     tweetCriteria = got.manager.TweetCriteria()
     tweetCriteria.maxTweets = maxtweets
     tweetCriteria.querySearch = query
@@ -25,7 +25,7 @@ def get_tweets(maxtweets, query, username='', since='', until='', top=False):
     if top:
         tweetCriteria.topTweets = True
 
-    outputFile = codecs.open("tweets.csv", "w+", "utf-8")
+    outputFile = codecs.open(filename, "w+", "utf-8")
     outputFile.write('username;date;retweets;favorites;text;geo;mentions;hashtags;id;permalink')
     got.manager.TweetManager.getTweets(tweetCriteria, receiveBuffer)
 
