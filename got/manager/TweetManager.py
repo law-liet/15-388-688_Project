@@ -89,6 +89,8 @@ class TweetManager:
 			
 		if hasattr(tweetCriteria, 'until'):
 			urlGetData += ' until:' + tweetCriteria.until
+
+		urlGetData += ' lang:en'
 			
 		if hasattr(tweetCriteria, 'querySearch'):
 			urlGetData += ' ' + tweetCriteria.querySearch
