@@ -19,7 +19,7 @@ def get_tweets(filename, maxtweets, query, username='', since='', until='', top=
         tweetCriteria.topTweets = True
 
     outputFile = codecs.open(filename, "w+", "utf-8")
-    outputFile.write('username,date,retweets,favorites,text,geo,mentions,hashtags,id,permalink')
+    outputFile.write('\"username\",\"date\",\"retweets\",\"favorites\",\"text\",\"geo\",\"mentions\",\"hashtags\",\"id\",\"permalink\"')
 
     def receiveBuffer(tweets):
         for t in tweets:
